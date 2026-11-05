@@ -3,11 +3,11 @@ import FilterBar, { type Filter } from '../components/FilterBar'
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
 import { Container } from '../components/SectionHead'
-import { projects } from '../data/projects'
+import { matchesFilter, projects } from '../data/projects'
 
 export default function Portfolio() {
   const [filter, setFilter] = useState<Filter>('all')
-  const list = filter === 'all' ? projects : projects.filter((p) => p.category === filter)
+  const list = filter === 'all' ? projects : projects.filter((p) => matchesFilter(p, filter))
 
   return (
     <section className="bg-[#F5F5F5] pb-20 pt-32 sm:pb-24 sm:pt-40 lg:pb-32">

@@ -6,7 +6,7 @@ import SafeBoundary from '../components/SafeBoundary'
 import FilterBar, { type Filter } from '../components/FilterBar'
 import ProjectCard from '../components/ProjectCard'
 import { Badge, Container, H2 } from '../components/SectionHead'
-import { projects } from '../data/projects'
+import { matchesFilter, projects } from '../data/projects'
 import LogoMarquee from '../components/LogoMarquee'
 import { process, services, why } from '../data/content'
 import { contactLink } from '../data/inquiry'
@@ -81,7 +81,7 @@ function Trust() {
 
 function SelectedWork() {
   const [filter, setFilter] = useState<Filter>('all')
-  const list = (filter === 'all' ? projects : projects.filter((p) => p.category === filter)).slice(0, 4)
+  const list = filter === 'all' ? projects : projects.filter((p) => matchesFilter(p, filter))
   return (
     <section className="bg-[#F5F5F5] pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-28 lg:pt-28">
       <Container>
@@ -102,7 +102,7 @@ function SelectedWork() {
         {list.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:gap-7">
             {list.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 60}>
+              <Reveal key={p.slug} delay={(i % 2) * 60}>
                 <ProjectCard project={p} index={i} />
               </Reveal>
             ))}

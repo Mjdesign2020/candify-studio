@@ -64,7 +64,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Abhishek Ranjan',
-    role: 'Software Engineer',
+    role: 'Software Engineer & Google Ads Expert',
     photo: 'abhishek-ranjan.jpg',
     bio: 'Abhishek is a Software Engineer and an integral contributor to the Candify Studio team. Based in India, he brings over 6+ years of experience in building scalable, high-performance digital products with a strong focus on clean architecture and modern development practices. His expertise includes High-Level Design (HLD), Low-Level Design (LLD), full-stack web development, React.js, Java, .NET, Flutter, and system architecture. Driven by continuous learning and problem-solving, Abhishek delivers reliable, scalable solutions that transform innovative ideas into exceptional digital experiences.',
     links: [

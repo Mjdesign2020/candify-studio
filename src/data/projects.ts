@@ -53,8 +53,8 @@ export interface Project {
    * /public/previews). Starts in ~200 ms vs ~2 s+ for a YouTube player, so it's preferred when set.
    */
   previewSrc?: string
-  /** External destination shown on the case study (live site, Behance, …). */
-  link?: { url: string; label: string }
+  /** External destinations shown as buttons on the case study (live site, Behance, …). */
+  links?: { url: string; label: string }[]
   /** Process / design frames for the case study. */
   frames?: Media[]
   /** Final video or project showcase for the case study. */
@@ -134,22 +134,6 @@ export const projects: Project[] = [
     isPlaceholder: false,
   },
   {
-    slug: 'ninzarin-3d-motion-video',
-    title: 'Ninzarin – Brand Explainer & 3D Motion Video',
-    client: 'Ninzarin',
-    categories: ['motion'],
-    tags: ['2D Explainer Video', '3D Motion Graphics', 'Branding', 'HR Tech'],
-    description:
-      "A creative video project bringing Ninzarin's skills-first workforce vision to life through engaging 2D storytelling and immersive 3D motion graphics, showcasing how AI, human intelligence, and skills-based solutions are transforming the future of talent and workforce development.",
-    // TODO: swap for a dedicated 3D thumbnail — this one is labelled "2D Explainer Video".
-    media: thumb('ninzarin', 'Ninzarin logo — 3D motion video'),
-    link: {
-      url: 'https://www.behance.net/gallery/233562279/Ninzarin-3D-Explainer-Video-%28Spec-Project%29',
-      label: 'Watch on Behance',
-    },
-    isPlaceholder: false,
-  },
-  {
     slug: 'prophetshares-explainer',
     title: 'ProphetShares – Explainer Video',
     client: 'ProphetShares',
@@ -170,7 +154,7 @@ export const projects: Project[] = [
     description:
       'Designed and developed a modern digital experience for VYRGON, an MMA-focused platform built to connect fighters, fans, academies, and supporters through athlete discovery, fight events, and the growing combat sports community.',
     media: thumb('vyrgon', 'VYRGON logo — UX/UI and product design'),
-    link: { url: 'https://vyrgon.com/', label: 'Visit live website' },
+    links: [{ url: 'https://vyrgon.com/', label: 'Visit live website' }],
     isPlaceholder: false,
   },
   {
@@ -184,6 +168,28 @@ export const projects: Project[] = [
     media: thumb('sorbet', 'Sorbet logo — 2D explainer video'),
     // TODO: this is the same video id as Beephire — replace with Sorbet's own YouTube id.
     youtubeId: 'B_XdPvF_FgI',
+    isPlaceholder: false,
+  },
+  {
+    slug: 'ninzarin-3d-motion-video',
+    title: 'Ninzarin – Brand Explainer & 3D Motion Video',
+    client: 'Ninzarin',
+    categories: ['motion'],
+    tags: ['2D Explainer Video', '3D Motion Graphics', 'Branding', 'HR Tech'],
+    description:
+      "A creative video project bringing Ninzarin's skills-first workforce vision to life through engaging 2D storytelling and immersive 3D motion graphics, showcasing how AI, human intelligence, and skills-based solutions are transforming the future of talent and workforce development.",
+    // TODO: swap for a dedicated 3D thumbnail — this one is labelled "2D Explainer Video".
+    media: thumb('ninzarin', 'Ninzarin logo — 3D motion video'),
+    links: [
+      {
+        url: 'https://www.behance.net/gallery/224471249/Ninzarin-Illustration-System',
+        label: '2D Brand Illustration System',
+      },
+      {
+        url: 'https://www.behance.net/gallery/233562279/Ninzarin-3D-Explainer-Video-%28Spec-Project%29',
+        label: '3D Mascot Motion Video',
+      },
+    ],
     isPlaceholder: false,
   },
 ]

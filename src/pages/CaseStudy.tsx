@@ -217,15 +217,20 @@ export default function CaseStudy() {
           <p className="mt-3 max-w-2xl text-[15px] sm:text-[17px] leading-[1.6] text-gray-700">
             {project.description}
           </p>
-          {project.link && (
-            <a
-              href={project.link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-[14px] font-medium text-white transition-colors duration-300 hover:bg-gray-700"
-            >
-              {project.link.label} <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+          {project.links && project.links.length > 0 && (
+            <div className="mt-6 flex flex-wrap gap-3">
+              {project.links.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-[14px] font-medium text-white transition-colors duration-300 hover:bg-gray-700"
+                >
+                  {link.label} <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           )}
         </header>
 

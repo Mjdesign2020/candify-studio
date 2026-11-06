@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "postbuild": "node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\""
+    "postbuild": "node scripts/prerender.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.460.0",

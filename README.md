@@ -53,5 +53,12 @@ This is a single-page app: configure your host to rewrite all paths to `index.ht
 ## Deploying to GitHub Pages (custom domain: candify.in)
 
 - Push to the `main` branch; `.github/workflows/deploy.yml` builds and publishes automatically.
-- `public/CNAME` holds the domain. `npm run build` also copies `index.html` to `404.html` so page links like `/pricing` work when opened directly.
+- `public/CNAME` holds the domain. After `vite build`, `scripts/prerender.mjs` writes `dist/<route>/index.html` for every page (so `/pricing/` etc. return HTTP 200, not 404), plus `sitemap.xml`, `robots.txt` and a noindex `404.html`.
+
+## SEO
+
+- Titles, descriptions, canonical URLs and social tags live in `src/data/seo.ts`. Project pages use their entry in `src/data/projects.ts` automatically, and new projects are added to the sitemap on the next build.
+- Canonical URLs end in `/` (e.g. `https://candify.in/pricing/`) because GitHub Pages serves each page from a folder.
+- Google Search Console: add a **Domain** property for `candify.in` and verify with the DNS TXT record (no code change), or use the HTML tag method by pasting the code into `GOOGLE_SITE_VERIFICATION` in `src/data/seo.ts`. Then submit `sitemap.xml` under Sitemaps.
+- Optional: add a 1200×630 share image to `public/` and set `DEFAULT_OG_IMAGE` in `src/data/seo.ts`.
 - In the repo: Settings > Pages > Source = "GitHub Actions", Custom domain = `candify.in`, then tick "Enforce HTTPS" once it is available.

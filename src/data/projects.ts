@@ -123,10 +123,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'ninzarin-brand-explainer-3d-motion',
-    title: 'Ninzarin – Brand Explainer & 3D Motion Video',
+    title: 'Ninzarin – Brand Explainer',
     client: 'Ninzarin',
     categories: ['explainer'],
-    tags: ['2D Explainer Video', '3D Motion Graphics', 'Branding', 'HR Tech'],
+    tags: ['2D Explainer Video', 'Branding', 'HR Tech'],
     description:
       "A creative video project bringing Ninzarin's skills-first workforce vision to life through engaging 2D storytelling and immersive 3D motion graphics, showcasing how AI, human intelligence, and skills-based solutions are transforming the future of talent and workforce development.",
     media: thumb('ninzarin', 'Ninzarin logo — brand explainer and 3D motion video'),

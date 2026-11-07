@@ -178,8 +178,7 @@ export const projects: Project[] = [
     tags: ['2D Explainer Video', '3D Motion Graphics', 'Branding', 'HR Tech'],
     description:
       "A creative video project bringing Ninzarin's skills-first workforce vision to life through engaging 2D storytelling and immersive 3D motion graphics, showcasing how AI, human intelligence, and skills-based solutions are transforming the future of talent and workforce development.",
-    // TODO: swap for a dedicated 3D thumbnail — this one is labelled "2D Explainer Video".
-    media: thumb('ninzarin', 'Ninzarin logo — 3D motion video'),
+    media: thumb('ninzarin-3d', 'Ninzarin — 3D explainer video & brand illustration system'),
     links: [
       {
         url: 'https://www.behance.net/gallery/224471249/Ninzarin-Illustration-System',
